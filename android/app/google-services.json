@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "20327185737",
+    "project_id": "iosfirebaseintegration",
+    "storage_bucket": "iosfirebaseintegration.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20327185737:android:f82a0ae95a93910b686e98",
+        "android_client_info": {
+          "package_name": "com.learndeep"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3KRi932cbuciUWUTcYZS8v8vFRJjdIX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20327185737:android:fec69ec91918c7b0686e98",
+        "android_client_info": {
+          "package_name": "com.learndeep"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3KRi932cbuciUWUTcYZS8v8vFRJjdIX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
