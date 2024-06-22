@@ -13,8 +13,10 @@
     "@react-native-firebase/app": "^20.1.0",
     "@react-native-firebase/messaging": "^20.1.0",
     "react": "18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dnd": "^16.0.1",
     "react-dnd-touch-backend": "^16.0.1",
+    "react-dom": "^18.3.1",
     "react-native": "0.74.2",
     "react-native-draggable": "^3.3.0",
     "react-native-draggable-flatlist": "^4.0.1",
@@ -23,7 +25,8 @@
     "react-native-image-pan-zoom": "^2.1.12",
     "react-native-image-zoom-viewer": "^3.0.1",
     "react-native-reanimated": "^3.12.1",
-    "react-native-sortable-list": "^0.0.25"
+    "react-native-sortable-list": "^0.0.25",
+    "react-native-web": "^0.19.12"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
