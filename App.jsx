@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet, Text, FlatList } from 'react-native';
 import DraggableFlatList from 'react-native-draggable-flatlist';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
@@ -23,13 +23,16 @@ const App = () => {
     <View
       style={[
         styles.item,
-        { backgroundColor: isActive ? '#e3e3e3' : '#fff' },
+        { 
+          transform: [{ scale: isActive ? 1.1 : 1 }],
+          elevation: isActive ? 10 : 2,
+        },
       ]}
     >
       <Image source={{ uri: item.uri }} style={styles.image} />
       <View
         style={styles.dragHandle}
-        {...drag()}
+        onTouchStart={drag}  // Trigger drag on touch start
       />
     </View>
   );
@@ -41,12 +44,23 @@ const App = () => {
 
   return (
     <GestureHandlerRootView style={styles.container}>
+      <Text style={styles.title}>Drag and Drop Images</Text>
       <DraggableFlatList
         data={data}
         renderItem={renderItem}
         keyExtractor={(item) => item.key}
         onDragEnd={onDragEnd}
         numColumns={3}
+      />
+      <Text style={styles.orderTitle}>Current Order of Keys:</Text>
+      <FlatList
+        data={data}
+        renderItem={({ item }) => (
+          <Text style={styles.orderText}>{item.key}</Text>
+        )}
+        keyExtractor={(item) => item.key}
+        horizontal
+        style={styles.orderList}
       />
     </GestureHandlerRootView>
   );
@@ -60,6 +74,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
     padding: 20,
   },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    marginTop: 50,
+  },
   item: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -68,6 +88,7 @@ const styles = StyleSheet.create({
     width: 100,
     borderRadius: 10,
     overflow: 'hidden',
+    backgroundColor: '#fff',
   },
   image: {
     width: '100%',
@@ -81,6 +102,17 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     // This view covers the entire item, making it draggable from any point within the item
+  },
+  orderTitle: {
+    fontSize: 18,
+    marginTop: 20,
+  },
+  orderList: {
+    marginTop: 10,
+  },
+  orderText: {
+    fontSize: 16,
+    marginHorizontal: 5,
   },
 });
 
